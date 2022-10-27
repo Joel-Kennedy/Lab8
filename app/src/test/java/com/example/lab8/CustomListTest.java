@@ -16,7 +16,7 @@ public class CustomListTest {
     private CustomList list;
     /**
      * create a mocklist for my citylist
-     * @return
+     * @return list {@link CustomList}
      */
     public CustomList MockCityList(){
         list = new CustomList(null,new ArrayList<>());
@@ -37,6 +37,10 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize + 1);
     }
 
+    /**
+     * Tests the hasCity method by adding a city
+     * Raises exception if list does not have city
+     */
     @Test
     public void hasCityTest(){
         list = MockCityList();
@@ -45,6 +49,10 @@ public class CustomListTest {
         assertTrue(list.hasCity(mockcity));
     }
 
+    /**
+     * Tests the deleteCity method by removing a city
+     * Raises exception if list still has a city
+     */
     @Test
     public void deleteCityTest(){
         list = MockCityList();
@@ -54,6 +62,10 @@ public class CustomListTest {
         assertEquals(0, list.getCount());
     }
 
+    /**
+     * Tests the countCities method buy adding a city then getting the amount of cities
+     * Raise exception if count is not 1.
+     */
     @Test
     public void countCitiesTest(){
         list = MockCityList();
